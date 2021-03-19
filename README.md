@@ -342,8 +342,23 @@ pass = 'password'
 
 ## Como usar la aplicación
 
-Atrabes de un naveagador web entre al dominio que configuro y le va a mostar de inicio en la cual se encuentra el login para acceder al sistema coloque las credenciales de prueba mensionada mas arriba.
+Mediante de un navegador web entre al dominio que configuro y le va a mostrar de inicio en la cual se encuentra el login para acceder al sistema coloque las credenciales de prueba mencionada mas arriba.
 
+![image](https://user-images.githubusercontent.com/56270362/111787024-d9782880-8894-11eb-90dd-98a62a455e2d.png)
+
+Luego que estás dentro de la aplicación podrás visualizar el menú en donde estarán los módulos de Contact and File.
+
+<img width="1437" alt="Captura de Pantalla 2021-03-19 a la(s) 9 21 35 a  m" src="https://user-images.githubusercontent.com/56270362/111786756-88683480-8894-11eb-915a-38ef30fb79a0.png">
+
+En el tab de *Files* podrás visualizar el listado de todos los archivos que el usuario ha procesado y también podrás subir nuevos archivos CSV para ser procesados.
+
+![image](https://user-images.githubusercontent.com/56270362/111787579-7cc93d80-8895-11eb-9528-93aad183b63d.png)
+
+Para cargar un archivo solo debemos presionar el botón de *CSV Import Contact* para que se abra el modal en la cual cargaremos el archivo y colocaremos el tipo de dato que pertenece a cada columna.
+
+![image](https://user-images.githubusercontent.com/56270362/111787673-9bc7cf80-8895-11eb-9e31-cd284469ff27.png)
+
+Listo ya tienes todos tus contactos en el sistema Contact APP ;).
 ## License
 
 The Laravel framework is open-sourced software licensed under the MIT license.
