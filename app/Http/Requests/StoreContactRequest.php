@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\PhoneNumber;
+use App\Rules\SpecialCharacters;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreContactRequest extends FormRequest
@@ -25,14 +27,16 @@ class StoreContactRequest extends FormRequest
     {
         return [
             'name' => [
-                'required'
+                'required',
+                new SpecialCharacters()
             ],
             'birthday' => [
                 'required',
                 'date_format:Y-m-d'
             ],
             'phone' => [
-                'required'
+                'required',
+                new PhoneNumber()
             ],
             'address' => [
                 'required'
