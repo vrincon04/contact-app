@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class File extends Model
 {
@@ -33,6 +34,28 @@ class File extends Model
         'errors' => 'array',
         'headers' => 'array'
     ];
+
+    /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
+    public $appends = ['url', 'size_in_kb'];
+
+    /**
+     * @return string
+     */
+    public function getUrlAttribute(): string
+    {
+        if (Storage::disk('s3')->exists($this->path))
+            return Storage::disk('s3')->temporaryUrl($this->path, now()->addMinutes(5));
+        return 'javascript:void(0)';
+    }
+
+    public function getSizeInKbAttribute()
+    {
+        return round($this->size / 1024, 2);
+    }
 
     public static function boot()
     {

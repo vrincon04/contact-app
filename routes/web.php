@@ -26,4 +26,10 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('/', [App\Http\Controllers\ContactController::class, 'index'])->name('contact.index');
         Route::get('/{id}', [App\Http\Controllers\ContactController::class, 'show'])->name('contact.show');
     });
+
+    Route::group(['prefix' => 'file'], function() {
+        Route::get('/', [App\Http\Controllers\FileController::class, 'index'])->name('file.index');
+        Route::get('/{id}', [App\Http\Controllers\FileController::class, 'show'])->name('file.show');
+        Route::post('upload', [App\Http\Controllers\FileController::class, 'upload'])->name('file.upload');
+    });
 });
