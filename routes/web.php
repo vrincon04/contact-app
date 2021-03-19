@@ -20,3 +20,10 @@ Auth::routes([
 ]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware' => ['auth']], function() {
+    Route::group(['prefix' => 'contact'], function() {
+        Route::get('/', [App\Http\Controllers\ContactController::class, 'index'])->name('contact.index');
+        Route::get('/{id}', [App\Http\Controllers\ContactController::class, 'show'])->name('contact.show');
+    });
+});
